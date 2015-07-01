@@ -1,2 +1,2 @@
 # bank-kata-orig
-Bank kata original. From a tutorial by Sandro Marcuso.
+Bank kata starting point. From a tutorial by Sandro Marcuso.
