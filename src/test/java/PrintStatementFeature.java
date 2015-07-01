@@ -1,13 +1,13 @@
 import com.craft.Account;
+import com.craft.BankAccount;
 import com.craft.Console;
 import org.junit.Test;
 
-import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 
 public class PrintStatementFeature {
 
-    private Account account = mock(Account.class);
+    private Account account = new BankAccount();
     private Console console;
 
     @Test
