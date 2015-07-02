@@ -11,6 +11,7 @@ public class Transaction {
     private int totalAfter;
     private int amount;
 
+
     public Transaction(String date, int total, int amount){
         this.date = date;
         this.totalAfter = total;

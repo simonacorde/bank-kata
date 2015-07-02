@@ -12,7 +12,7 @@ import static org.mockito.Mockito.verify;
 
 public class PrintStatementFeature {
 
-    private Account account = new BankAccount();
+    private Account account ;
 
     @Mock
     private Console console;
@@ -21,15 +21,15 @@ public class PrintStatementFeature {
     @Test
     public void print_statement_containing_transactions_in_reverse_chronological_order() {
         console = mock(Console.class);
+        account = new BankAccount(console);
 
         account.deposit(1000);
         account.withdraw(100);
         account.deposit(500);
 
-        List<String> allTrans ;
-        allTrans = account.printStatement();
-        for(int i=0;i<allTrans.size();i++)
-            console.printLine(allTrans.get(i));
+
+        account.printStatement();
+
 
 
         verify(console).printLine("DATE | AMOUNT | BALANCE");

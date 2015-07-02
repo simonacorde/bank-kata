@@ -8,6 +8,6 @@ public interface Account {
 
     void withdraw(int amount);
 
-    List<String> printStatement();
+    void printStatement();
 
 }
