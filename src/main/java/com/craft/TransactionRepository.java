@@ -9,13 +9,15 @@ import java.util.List;
 public class TransactionRepository {
 
     private List<Transaction> transactions;
+    private DateTransaction dt;
 
-    public TransactionRepository(){
+    public TransactionRepository(DateTransaction dt){
         transactions = new ArrayList<Transaction>();
+        this.dt = dt;
     }
 
-    public void addTransaction(String date, int total, int amount){
-        Transaction t = new Transaction(date, total, amount);
+    public void addTransaction(int total, int amount){
+        Transaction t = new Transaction(dt.getCurrentDate(), total, amount);
         transactions.add(t);
     }
 

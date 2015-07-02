@@ -10,7 +10,8 @@ import java.util.Date;
 public class DateTransaction {
 
      private DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
-     Date date;
+     private Date date;
+
 
     public String getCurrentDate(){
         date = new Date();
