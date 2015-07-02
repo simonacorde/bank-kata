@@ -32,10 +32,10 @@ public class BankAccount implements Account {
     }
 
     public void printStatement() {
-        for(int i=0;i<transactions.size();i++){
+        for(int i=transactions.size()-1;i>=0;i--){
             System.out.println(""+transactions.get(i).getDate()+" | "+transactions.get(i).getAmount()+" | "+transactions.get(i).getTotalAfter());
         }
 
     }
-    
+
 }
