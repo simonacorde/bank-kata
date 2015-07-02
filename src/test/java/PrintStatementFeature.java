@@ -10,6 +10,7 @@ public class PrintStatementFeature {
     private Account account = new BankAccount();
     private Console console;
 
+
     @Test
     public void print_statement_containing_transactions_in_reverse_chronological_order() {
         account.deposit(1000);

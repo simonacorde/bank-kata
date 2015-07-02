@@ -7,4 +7,5 @@ public interface Account {
     void withdraw(int amount);
 
     void printStatement();
+
 }
