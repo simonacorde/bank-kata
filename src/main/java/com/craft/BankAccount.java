@@ -9,34 +9,32 @@ import java.util.List;
 public class BankAccount implements Account {
 
     private int total;
-    private List<Transaction> transactions;
-    DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
-    Console console;
-    DateTransaction dt;
+    private Console console;
+    private DateTransaction dt;
+    private TransactionRepository tr;
 
     public BankAccount(Console console){
         this.total = 0;
-        transactions = new ArrayList<Transaction>();
         this.console = console;
         dt= new DateTransaction();
+        tr = new TransactionRepository();
     }
 
     public void deposit(int amount) {
         total+=amount;
-        transactions.add(new Transaction(dt.getCurrentDate(), total, amount));
+        tr.addTransaction(dt.getCurrentDate(), total, amount);
     }
 
     public void withdraw(int amount) {
         total-=amount;
-        Date date = new Date();
         int amount1 = 0-amount;
-        transactions.add(new Transaction(dt.getCurrentDate(), total, amount1));
+        tr.addTransaction(dt.getCurrentDate(), total, amount1);
     }
 
     public void printStatement() {
         console.printLine("DATE | AMOUNT | BALANCE");
-        for(int i=transactions.size()-1;i>=0;i--){
-            console.printLine(""+transactions.get(i).getDate()+" | "+(double)transactions.get(i).getAmount()+" | "+(double)transactions.get(i).getTotalAfter());
+        for(int i=tr.getTransactions().size()-1;i>=0;i--){
+            console.printLine(""+tr.getTransactions().get(i).getDate()+" | "+(double)tr.getTransactions().get(i).getAmount()+" | "+(double)tr.getTransactions().get(i).getTotalAfter());
         }
 
 
