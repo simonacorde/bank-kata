@@ -1,4 +1,9 @@
+<<<<<<< HEAD
 import com.craft.*;
+=======
+import com.craft.Account;
+import com.craft.Console;
+>>>>>>> parent of dfa06dc... adds bank account abstraction
 import org.junit.Test;
 import org.mockito.Mock;
 
@@ -8,9 +13,13 @@ import static org.mockito.Mockito.when;
 
 public class PrintStatementFeature {
 
+<<<<<<< HEAD
     private Account account ;
 
     @Mock
+=======
+    private Account account = mock(Account.class);
+>>>>>>> parent of dfa06dc... adds bank account abstraction
     private Console console;
 
 
