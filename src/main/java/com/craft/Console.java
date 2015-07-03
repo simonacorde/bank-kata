@@ -5,5 +5,4 @@ public class Console {
         System.out.println(line);
     }
 
-
 }

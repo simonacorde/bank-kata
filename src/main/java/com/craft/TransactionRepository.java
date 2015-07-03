@@ -1,5 +1,7 @@
 package com.craft;
 
+import org.springframework.stereotype.Service;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12,12 +14,12 @@ public class TransactionRepository {
     private DateTransaction dt;
 
     public TransactionRepository(DateTransaction dt){
-        transactions = new ArrayList<Transaction>();
+        transactions = new ArrayList<>();
         this.dt = dt;
     }
 
-    public void addTransaction(int total, int amount){
-        Transaction t = new Transaction(dt.getCurrentDate(), total, amount);
+    public void addTransaction(int amount){
+        Transaction t = new Transaction(dt.getCurrentDate(),amount);
         transactions.add(t);
     }
 

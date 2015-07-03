@@ -8,13 +8,11 @@ import java.util.Date;
 public class Transaction {
 
     private String date;
-    private int totalAfter;
     private int amount;
 
 
-    public Transaction(String date, int total, int amount){
+    public Transaction(String date, int amount){
         this.date = date;
-        this.totalAfter = total;
         this.amount = amount;
     }
 
@@ -22,23 +20,18 @@ public class Transaction {
         return date;
     }
 
-    public void setDate(String date) {
-        this.date = date;
-    }
-
-    public int getTotalAfter() {
-        return totalAfter;
-    }
-
-    public void setTotalAfter(int totalAfter) {
-        this.totalAfter = totalAfter;
-    }
 
     public int getAmount() {
         return amount;
     }
 
-    public void setAmount(int amount) {
-        this.amount = amount;
+
+    @Override
+    public String toString() {
+        return "Transaction{" +
+                "date='" + date + '\'' +
+                ", amount=" + amount +
+                '}';
     }
+
 }
