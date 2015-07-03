@@ -1,16 +1,24 @@
 import com.craft.*;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 
-/**
- * Created by scorde on 7/3/2015.
- */
+
+@ContextConfiguration("classpath:spring-config.xml")
 public class BankAccountTest {
 
+    @Autowired
     private Account account;
+
     private TransactionRepository transactionRepository;
     private Printer printer;
 
